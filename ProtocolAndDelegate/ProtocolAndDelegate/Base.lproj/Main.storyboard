@@ -24,6 +24,9 @@
                                 <state key="normal" title="GOTO VC 2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="gotoNextVCButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yii-jG-xKf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd0-av-yNO">
                                 <rect key="frame" x="36" y="141" width="344" height="27"/>
@@ -71,6 +74,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="VC 1" id="Jvr-0g-aZ2"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="FO3-K7-v1p" id="aMF-eq-pDH"/>
+                        <outlet property="cityLabel" destination="oaO-cq-px5" id="oER-4L-mNq"/>
+                        <outlet property="nameLabel" destination="vd0-av-yNO" id="vjl-Bb-GPF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +87,7 @@
         <!--VC 2-->
         <scene sceneID="rsE-H2-Tdg">
             <objects>
-                <viewController title="VC 2" id="4RZ-hm-8Ay" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondVC" title="VC 2" id="4RZ-hm-8Ay" customClass="SecondViewController" customModule="ProtocolAndDelegate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kl9-7h-vnl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,6 +99,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4RZ-hm-8Ay" id="txz-fa-W8O"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvn-ba-jV5">
                                 <rect key="frame" x="20" y="249" width="359" height="34"/>
@@ -99,6 +110,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4RZ-hm-8Ay" id="G71-Yu-0tY"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYC-Se-Qp3">
                                 <rect key="frame" x="105" y="332" width="205" height="40"/>
@@ -106,6 +120,9 @@
                                     <constraint firstAttribute="height" constant="40" id="3bq-X3-z4o"/>
                                 </constraints>
                                 <state key="normal" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="4RZ-hm-8Ay" eventType="touchUpInside" id="igv-Ae-TLK"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lw1-Kv-3GX">
                                 <rect key="frame" x="20" y="186" width="359" height="34"/>
@@ -114,6 +131,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4RZ-hm-8Ay" id="4Yy-ap-XDl"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -133,6 +153,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4w7-9U-0ID"/>
                     </view>
+                    <connections>
+                        <outlet property="ageTextField" destination="Lw1-Kv-3GX" id="clW-Ts-8aS"/>
+                        <outlet property="cityTextField" destination="dvn-ba-jV5" id="nkA-EA-g6V"/>
+                        <outlet property="nameTextField" destination="GKW-98-6U3" id="dUT-E4-SvH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUj-V8-LDj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

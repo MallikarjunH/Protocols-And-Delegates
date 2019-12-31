@@ -8,8 +8,20 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+protocol DataPass {
+    
+    func dataPassing(name:String, age:String, city:String)
+}
 
+class SecondViewController: UIViewController, UITextFieldDelegate {
+
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    
+    var delegate:DataPass!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +29,16 @@ class SecondViewController: UIViewController {
     }
     
 
+    @IBAction func saveButtonClicked(_ sender: Any) {
     
+        delegate.dataPassing(name: nameTextField.text ?? "0", age: ageTextField.text ?? "0", city: cityTextField.text ?? "0")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
 
 }
